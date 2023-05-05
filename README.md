@@ -8,7 +8,7 @@ This is a simple method to create an array of objects in representation of a nav
 ## Usage
 
 ```javascript
-createPages({
+createPagination({
     /* total result pages possible */
     totalPages: 20,
 
@@ -65,7 +65,7 @@ createPages({
 
 ## Example
 ```javascript
-createPages({
+createPagination({
     totalPages: 20,
     pageIndex: 20,
     range: 2,

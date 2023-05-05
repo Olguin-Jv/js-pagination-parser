@@ -21,7 +21,7 @@ const getSubset = ({ arr, pageIndex, range }) => {
     return Array.from({ length: end - start + 1 }, (_, i) => arr[start + i]);
 }
 
-const createPages = ({
+const createPagination = ({
     totalPages,
     pageIndex,
     range,
@@ -103,13 +103,4 @@ const createPages = ({
     return [...leftArrow, ...pagination, ...rightArrow]
 }
 
-createPages({
-    totalPages:20,
-    pageIndex: 1,
-    range: 2,
-    pageLink: 'google.com',
-    pageQueryKey: '_page',
-    resultsLimitQueryKey: '_limit',
-    resultsLimitNumber: 9,
-    setArrows: true
-}) //?
+module.exports = createPagination
