@@ -11,7 +11,7 @@
     "url": "git+https://github.com/Olguin-Jv/js-pagination-parser.git"
   },
   "keywords": [
-    "pagination"
+    "pagination", "paginate", "framework-agnostic", "agnostic", "parse", "parser", "vue", "react", "angular", "vanilla"
   ],
   "author": "OlguinJV",
   "license": "ISC",
