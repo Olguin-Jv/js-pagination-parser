@@ -1,25 +1,8 @@
-const DEFAULT_PAGINATION_RANGE = 5
-
-const pagesToArray = length => Array.from({ length }, (_, index) => index + 1);
-
-const getSubset = ({ arr, pageIndex, range }) => {
-    const arrIdx = pageIndex - 1;
-
-    let start = arrIdx - range;
-    let end = arrIdx + range;
-
-    if (start < 0) {
-      end += Math.abs(start);
-      start = 0;
-    }
-    
-    if (end >= arr.length) {
-      start -= (end - (arr.length - 1));
-      end = arr.length - 1;
-    }
-
-    return Array.from({ length: end - start + 1 }, (_, i) => arr[start + i]);
-}
+const { DEFAULT_PAGINATION_RANGE } = require('./utils/constants')
+const { 
+    pagesToArray,
+    getSubset
+ } = require('./utils/methods')
 
 const createPagination = ({
     totalPages,
@@ -33,7 +16,7 @@ const createPagination = ({
 }) => {
     
     let subset = getSubset({
-        arr: pagesToArray(totalPages),
+        pagesArray: pagesToArray(totalPages),
         pageIndex,
         range
     })
