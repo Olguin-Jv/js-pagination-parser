@@ -7,6 +7,17 @@ This is a simple method to create an array of objects in representation of a nav
 
 ## Usage
 
+```bash
+npm i js-pagination-parser
+```
+
+```javascript
+import createPagination from 'js-pagination-parser';
+
+const parsedPagination = createPagination({ ... });
+```
+
+Example:
 ```javascript
 createPagination({
     /* total result pages possible */
