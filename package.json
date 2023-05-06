@@ -4,7 +4,7 @@
   "description": "Pure JS paginator bar creator",
   "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Olguin-Jv/js-pagination-parser/issues"
   },
-  "homepage": "https://github.com/Olguin-Jv/js-pagination-parser#readme"
+  "homepage": "https://github.com/Olguin-Jv/js-pagination-parser#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
 }
