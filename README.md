@@ -7,6 +7,17 @@ This is a simple method to create an array of objects in representation of a nav
 
 ## Usage
 
+```bash
+npm i js-pagination-parser
+```
+
+```javascript
+import createPagination from 'js-pagination-parser';
+
+const parsedPagination = createPagination({ ... });
+```
+
+Example:
 ```javascript
 createPagination({
     /* total result pages possible */
@@ -63,6 +74,8 @@ createPagination({
 })
 ```
 
+--------
+
 ## Example
 ```javascript
 createPagination({
@@ -79,39 +92,99 @@ createPagination({
 
 Results in:
 ```javascript
-[ { page: 1,
+[ { page: 19,
+    label: '<-',
+    link: 'google.com?_page=19&_limit=9',
+    isLink: true,
+    enabled: true,
+    type: 'arrowLeft' },
+  { page: 1,
     label: '1',
     link: 'google.com?_page=1&_limit=9',
     isLink: true,
-    isActive: false },
+    enabled: false,
+    type: 'link' },
   { page: null,
     label: '...',
     link: null,
     isLink: false,
-    isActive: false },
+    enabled: false,
+    type: 'space' },
   { page: 16,
     label: '16',
     link: 'google.com?_page=16&_limit=9',
     isLink: true,
-    isActive: false },
+    enabled: false,
+    type: 'link' },
   { page: 17,
     label: '17',
     link: 'google.com?_page=17&_limit=9',
     isLink: true,
-    isActive: false },
+    enabled: false,
+    type: 'link' },
   { page: 18,
     label: '18',
     link: 'google.com?_page=18&_limit=9',
     isLink: true,
-    isActive: false },
+    enabled: false,
+    type: 'link' },
   { page: 19,
     label: '19',
     link: 'google.com?_page=19&_limit=9',
     isLink: true,
-    isActive: false },
+    enabled: false,
+    type: 'link' },
   { page: 20,
     label: '20',
     link: 'google.com?_page=20&_limit=9',
     isLink: true,
-    isActive: true } ]
+    enabled: true,
+    type: 'link' },
+  { page: null,
+    label: '->',
+    link: null,
+    isLink: true,
+    enabled: false,
+    type: 'arrowRight' } ]
+```
+
+Returned object in detail:
+```javascript
+{
+  /* correspondant page link number */
+  page: 20,
+
+  /**
+   * similar to page but will represent the element label
+   * can return:
+   * - page label in numbers         -> e.g: '20'
+   * - label reperenting the spacing -> '...'
+   * - label representing an arrow   -> '<-' or '->'
+   */
+  label: '20',
+
+  /**
+   * Link generated based with the following logic
+   * `${pageLink}?${pageQueryKey}${page}${resultsLimitQueryKey}${resultsLimitNumber}`
+   * 
+   * If the item is not a type arrowRight|arrowLeft|link will return null
+   */
+  link: 'google.com?_page=20&_limit=9',
+
+  /**
+   * easy isLink check
+   */
+  isLink: true,
+
+  /**
+   * will return true if the items represents the current page
+   */
+  enabled: true
+
+  /**
+   * Will return element type:
+   * arrowRight | arrowLeft| link | space
+   */
+  type: 'link'
+}
 ```

@@ -1,0 +1,5 @@
+const DEFAULT_PAGINATION_RANGE = 5
+
+module.exports = {
+    DEFAULT_PAGINATION_RANGE
+}
