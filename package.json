@@ -2,16 +2,26 @@
   "name": "js-pagination-parser",
   "version": "1.0.0",
   "description": "Pure JS paginator bar creator",
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Olguin-Jv/js-pagination-parser.git"
   },
   "keywords": [
-    "pagination", "paginate", "framework-agnostic", "agnostic", "parse", "parser", "vue", "react", "angular", "vanilla"
+    "pagination",
+    "paginate",
+    "framework-agnostic",
+    "agnostic",
+    "parse",
+    "parser",
+    "vue",
+    "react",
+    "angular",
+    "vanilla"
   ],
   "author": "OlguinJV",
   "license": "ISC",
@@ -20,6 +30,14 @@
   },
   "homepage": "https://github.com/Olguin-Jv/js-pagination-parser#readme",
   "devDependencies": {
-    "jest": "^29.5.0"
-  }
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "^9.1.2",
+    "jest": "^29.5.0",
+    "webpack": "^5.82.0",
+    "webpack-cli": "^5.0.2"
+  },
+  "files": [
+    "/dist"
+  ]
 }
