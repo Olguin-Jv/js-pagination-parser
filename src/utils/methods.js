@@ -16,7 +16,10 @@ const getSubset = ({ pagesArray, pageIndex, range }) => {
       end = pagesArray.length - 1;
     }
 
-    return Array.from({ length: end - start + 1 }, (_, i) => pagesArray[start + i]);
+
+    return Array
+            .from({ length: end - start + 1 }, (_, i) => pagesArray[start + i])
+            .filter(i => Boolean(i));
 }
 
 module.exports = {

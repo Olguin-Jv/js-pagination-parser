@@ -142,7 +142,21 @@ describe('getSubset', () => {
                 range: 3
             })).toStrictEqual([ 14, 15, 16, 17, 18, 19, 20 ])
         });
+
+        it('If range is bigger than pagination length should not return any incorrect values', () => {
+            const config = {
+                pagesArray,
+                pageIndex: 10,
+                range: 999
+            }
+            
+            getSubset(config).forEach((el) => {
+                expect(el > 0 && Boolean(el)).toBeTruthy()
+            })
+
+        })
         
     })
+
     
 })
